@@ -1,7 +1,7 @@
 # FROM php:8.1
 # RUN apt-get update -y && apt-get install -y openssl zip unzip git
 # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-# RUN docker-php-ext-install pdo 
+# RUN docker-php-ext-install pdo
 # WORKDIR /app
 # COPY . /app
 # RUN composer install
@@ -49,7 +49,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mys
 
 RUN apt-get --yes install libfreetype6-dev \
                           libjpeg62-turbo-dev \
-                          libpng-dev 
+                          libpng-dev
 
 RUN set -e; \
     docker-php-ext-configure gd --with-jpeg  --with-freetype; \
